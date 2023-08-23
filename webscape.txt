@@ -1,0 +1,55 @@
+EXCERISE OF WEB SCAPING IN PYTHON WITH BS4 
+
+
+Hello everyone, welcome back to ABAnuSara channel! Today, we're going to learn 
+how to use Python for web scraping to gather product information from Amazon.
+
+Step 1: Importing Required Libraries:
+
+Import the necessary libraries: requests, BeautifulSoup, and csv.
+These libraries will help us fetch webpage content, parse HTML, and store data 
+in CSV format.
+
+Step 2: Setting Up the Base URL: 
+
+Set the base URL to the Amazon search page for bags.
+This URL will be used to fetch data from multiple pages of the search results.
+
+Step 3: Creating and Initializing the CSV File:
+
+Create a CSV file named "amazon_bags.csv" to store the scraped data.
+Initialize a CSV writer object to write data into the CSV file.
+Write the header row with column names: "Product Name", "Product Price", 
+"Rating", "Number of Reviews", and "Product URL".
+
+Step 4: Scraping Product Listings:
+
+Loop through a range of page numbers (from 1 to 20) to scrape 20 pages of results.
+For each page, construct the complete URL by appending the page number to the base URL.
+Use the requests library to fetch the webpage content.
+Create a BeautifulSoup object to parse the HTML content.
+Find all product cards using their class name.
+For each product card, extract information like product name, price, rating, number of reviews, 
+and product URL.
+Handle cases where some information might not be available, setting them to "N/A".
+Write the extracted information to the CSV file using the CSV writer.
+
+Step 5: Reading CSV and Scraping Additional Information:
+
+Open the "amazon_bags.csv" file for reading using the csv.reader object.
+Skip the header row using next(csv_reader).
+Loop through each row in the CSV reader.
+Extract the product URL from the row.
+Use the URL to fetch the individual product page.
+Create a BeautifulSoup object to parse the product page content.
+Try to find and extract additional information like product description and ASIN.
+Append the extracted information to the row.
+Open the "amazon_bags_updated.csv" file for appending using the csv.writer object.
+Write the updated row with additional information to the updated CSV file.
+
+Conclusion:
+
+Congratulations! You've successfully scraped product data from Amazon's search results 
+using Python.
+Web scraping is a powerful technique for extracting valuable information from websites
+ and can be used for various purposes.
